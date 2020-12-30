@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+    <FrameLayout
+        android:id="@+id/all"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <FrameLayout
+            android:id="@+id/game"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg" >
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="20dp"
+            android:paddingTop="20dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btn_start"
+                    android:layout_width="202dp"
+                    android:layout_height="68dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/play"
+                    android:onClick="onClick"/>
+
+                <ImageButton
+                    android:id="@+id/btn_privacy"
+                    android:layout_width="202dp"
+                    android:layout_height="68dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/privacy"
+                    android:onClick="onClick"/>
+
+                <ImageButton
+                    android:id="@+id/btn_exit"
+                    android:layout_width="202dp"
+                    android:layout_height="68dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/exit"
+                    android:onClick="onClick"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/txt_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:textColor="#E93C6C"
+                android:textSize="60sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_high_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</LinearLayout>
