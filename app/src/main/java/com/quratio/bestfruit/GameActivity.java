@@ -85,17 +85,6 @@ public class GameActivity extends Activity {
 
         // bg sound
         mp = new MediaPlayer();
-        /*try {
-            AssetFileDescriptor descriptor = getAssets().openFd("snd_bg.mp3");
-            mp.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
-            descriptor.close();
-            mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
-            mp.setLooping(true);
-            mp.setVolume(0, 0);
-            mp.prepare();
-            mp.start();
-        } catch (Exception e) {
-        }*/
 
 
         // SoundPool
@@ -553,20 +542,6 @@ public class GameActivity extends Activity {
         }
     };
 
-    // STOP
-   /* Runnable STOP = new Runnable() {
-        @Override
-        public void run() {
-            // show result
-            show_section(R.id.result);
-
-
-            // sound
-            if (!sp.getBoolean("mute", false) && isForeground)
-                sndpool.play(snd_result, 0.5f, 0.5f, 0, 0, 1);
-        }
-    };*/
-
     // get_near
     View get_near(float x, float y) {
         for (int i = 0; i < items.size(); i++)
@@ -605,7 +580,6 @@ public class GameActivity extends Activity {
                 show_section(R.id.game);
                 h.removeCallbacks(TIMER);
                 h.removeCallbacks(MOVE);
-                //h.removeCallbacks(STOP);
                 if (anim != null)
                     anim.cancel();
                 break;
@@ -618,7 +592,6 @@ public class GameActivity extends Activity {
         findViewById(R.id.main).setVisibility(View.GONE);
         findViewById(R.id.game).setVisibility(View.GONE);
         findViewById(R.id.result).setVisibility(View.GONE);
-        //findViewById(R.id.mess).setVisibility(View.GONE);
         findViewById(current_section).setVisibility(View.VISIBLE);
     }
 
@@ -626,7 +599,6 @@ public class GameActivity extends Activity {
     protected void onDestroy() {
         h.removeCallbacks(TIMER);
         h.removeCallbacks(MOVE);
-        //h.removeCallbacks(STOP);
         mp.release();
         sndpool.release();
 
@@ -679,19 +651,6 @@ public class GameActivity extends Activity {
                 else { // sign fail
 
                 }
-    }
-
-    static class TouchableButton extends androidx.appcompat.widget.AppCompatButton {
-        public TouchableButton(Context context) {
-            super(context);
-        }
-
-        @SuppressLint("ClickableViewAccessibility")
-        @Override
-        public boolean performClick() {
-            // do what you want
-            return true;
-        }
     }
 }
 
